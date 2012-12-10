@@ -14,7 +14,7 @@
   \~english
   \section mainpage_what Abstract
 
-  This is open source C library for Hokuyo URG laser range scanners.  This library is confirmed to work in these environment below.
+  This is open source C library for Hokuyo URG laser range scanners.  This library is confirmed to work in the following environments:
 
   - Visual C++ 2005
   - gcc 4.6.0 (Linux)

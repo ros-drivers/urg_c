@@ -46,6 +46,10 @@ find_port : $(REQUIRE_LIB)
 open_urg_sensor.o: ../include/urg_sensor.h ../include/urg_connection.h
 open_urg_sensor.o: ../include/urg_serial.h ../include/urg_detect_os.h
 open_urg_sensor.o: ../include/urg_ring_buffer.h ../include/urg_tcpclient.h
+angle_convert_test.o: ../include/urg_sensor.h ../include/urg_connection.h
+angle_convert_test.o: ../include/urg_serial.h ../include/urg_detect_os.h
+angle_convert_test.o: ../include/urg_ring_buffer.h ../include/urg_tcpclient.h
+angle_convert_test.o: ../include/urg_utils.h open_urg_sensor.h
 calculate_xy.o: ../include/urg_sensor.h ../include/urg_connection.h
 calculate_xy.o: ../include/urg_serial.h ../include/urg_detect_os.h
 calculate_xy.o: ../include/urg_ring_buffer.h ../include/urg_tcpclient.h
