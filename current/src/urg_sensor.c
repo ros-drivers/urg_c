@@ -565,7 +565,7 @@ static int receive_length_data(urg_t *urg, long length[],
 
 //! 距離データの取得
 static int receive_data(urg_t *urg, long data[], unsigned short intensity[],
-                        long *time_stamp)
+                        long *time_stamp, unsigned long long *system_time_stamp)
 {
     urg_measurement_type_t type;
     char buffer[BUFFER_SIZE];
@@ -619,7 +619,7 @@ static int receive_data(urg_t *urg, long data[], unsigned short intensity[],
                 ignore_receive_data_with_qt(urg, urg->timeout);
                 return set_errno_and_return(urg, URG_INVALID_RESPONSE);
             } else {
-                return receive_data(urg, data, intensity, time_stamp);
+                return receive_data(urg, data, intensity, time_stamp, system_time_stamp);
             }
         }
     }
@@ -644,6 +644,9 @@ static int receive_data(urg_t *urg, long data[], unsigned short intensity[],
     if (n > 0) {
         if (time_stamp) {
             *time_stamp = urg_scip_decode(buffer, 4);
+        }
+        if (system_time_stamp) {
+            urg_get_walltime(system_time_stamp);
         }
     }
 
@@ -927,47 +930,47 @@ int urg_start_measurement(urg_t *urg, urg_measurement_type_t type,
 }
 
 
-int urg_get_distance(urg_t *urg, long data[], long *time_stamp)
+int urg_get_distance(urg_t *urg, long data[], long *time_stamp, unsigned long long *system_time_stamp)
 {
     if (!urg->is_active) {
         return set_errno_and_return(urg, URG_NOT_CONNECTED);
     }
-    return receive_data(urg, data, NULL, time_stamp);
+    return receive_data(urg, data, NULL, time_stamp, system_time_stamp);
 }
 
 
 int urg_get_distance_intensity(urg_t *urg,
                                long data[], unsigned short intensity[],
-                               long *time_stamp)
+                               long *time_stamp, unsigned long long *system_time_stamp)
 {
     if (!urg->is_active) {
         return set_errno_and_return(urg, URG_NOT_CONNECTED);
     }
 
-    return receive_data(urg, data, intensity, time_stamp);
+    return receive_data(urg, data, intensity, time_stamp, system_time_stamp);
 }
 
 
-int urg_get_multiecho(urg_t *urg, long data_multi[], long *time_stamp)
+int urg_get_multiecho(urg_t *urg, long data_multi[], long *time_stamp, unsigned long long *system_time_stamp)
 {
     if (!urg->is_active) {
         return set_errno_and_return(urg, URG_NOT_CONNECTED);
     }
 
-    return receive_data(urg, data_multi, NULL, time_stamp);
+    return receive_data(urg, data_multi, NULL, time_stamp, system_time_stamp);
 }
 
 
 int urg_get_multiecho_intensity(urg_t *urg,
                                 long data_multi[],
                                 unsigned short intensity_multi[],
-                                long *time_stamp)
+                                long *time_stamp, unsigned long long *system_time_stamp)
 {
     if (!urg->is_active) {
         return set_errno_and_return(urg, URG_NOT_CONNECTED);
     }
 
-    return receive_data(urg, data_multi, intensity_multi, time_stamp);
+    return receive_data(urg, data_multi, intensity_multi, time_stamp, system_time_stamp);
 }
 
 
@@ -990,7 +993,7 @@ int urg_stop_measurement(urg_t *urg)
 
     for (i = 0; i < MAX_READ_TIMES; ++i) {
         // QT の応答が返されるまで、距離データを読み捨てる
-        ret = receive_data(urg, NULL, NULL, NULL);
+        ret = receive_data(urg, NULL, NULL, NULL, NULL);
         if (ret == URG_NO_ERROR) {
             // 正常応答
             urg->is_laser_on = URG_FALSE;

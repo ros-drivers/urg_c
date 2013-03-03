@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     long max_distance;
     long min_distance;
     long time_stamp;
+    unsigned long long system_time_stamp;
     int i;
     int n;
 
@@ -39,7 +40,7 @@ int main(int argc, char *argv[])
 
     // \~japanese ƒf[ƒ^æ“¾
     urg_start_measurement(&urg, URG_DISTANCE, 1, 0);
-    n = urg_get_distance(&urg, data, &time_stamp);
+    n = urg_get_distance(&urg, data, &time_stamp, system_time_stamp);
     if (n < 0) {
         printf("urg_get_distance: %s\n", urg_error(&urg));
         urg_close(&urg);

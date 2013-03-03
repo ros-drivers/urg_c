@@ -25,6 +25,7 @@ extern "C" {
 #endif
 
 #include "urg_c/urg_connection.h"
+#include "urg_c/urg_time.h"
 
 
     /*!
@@ -294,7 +295,7 @@ extern "C" {
       \~
       \see urg_start_measurement(), urg_max_data_size()
     */
-    extern int urg_get_distance(urg_t *urg, long data[], long *time_stamp);
+    extern int urg_get_distance(urg_t *urg, long data[], long *time_stamp, unsigned long long *system_time_stamp);
 
 
     /*!
@@ -334,7 +335,7 @@ extern "C" {
     */
     extern int urg_get_distance_intensity(urg_t *urg, long data[],
                                           unsigned short intensity[],
-                                          long *time_stamp);
+                                          long *time_stamp, unsigned long long *system_time_stamp);
 
 
     /*!
@@ -383,7 +384,7 @@ extern "C" {
       \~
       \see urg_start_measurement(), urg_max_data_size()
     */
-    extern int urg_get_multiecho(urg_t *urg, long data_multi[], long *time_stamp);
+    extern int urg_get_multiecho(urg_t *urg, long data_multi[], long *time_stamp, unsigned long long *system_time_stamp);
 
 
     /*!
@@ -422,7 +423,7 @@ extern "C" {
     */
     extern int urg_get_multiecho_intensity(urg_t *urg, long data_multi[],
                                            unsigned short intensity_multi[],
-                                           long *time_stamp);
+                                           long *time_stamp, unsigned long long *system_time_stamp);
 
 
     /*!
