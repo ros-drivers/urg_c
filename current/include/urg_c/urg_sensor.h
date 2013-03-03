@@ -603,6 +603,15 @@ extern "C" {
     */
     extern const char *urg_sensor_serial_id(urg_t *urg);
 
+    /*!
+      \brief returns the vendor name
+
+      \param[in] URG
+
+      \return The vendor name
+    */
+    extern const char *urg_sensor_vendor(urg_t *urg);
+
 
     /*!
       \~japanese
@@ -616,6 +625,16 @@ extern "C" {
     */
     extern const char *urg_sensor_firmware_version(urg_t *urg);
 
+    extern const char *urg_sensor_firmware_date(urg_t *urg);
+
+    /*!
+      \brief returns the protocol version
+
+      \param[in] URG
+
+      \return The current protocol version
+    */
+    extern const char *urg_sensor_protocol_version(urg_t *urg);
 
     /*!
       \~japanese

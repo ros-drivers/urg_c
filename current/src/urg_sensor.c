@@ -1214,6 +1214,28 @@ const char *urg_sensor_serial_id(urg_t *urg)
     return (p) ? p : RECEIVE_ERROR_MESSAGE;
 }
 
+const char *urg_sensor_vendor(urg_t *urg){
+    enum {
+        RECEIVE_BUFFER_SIZE = BUFFER_SIZE * VV_RESPONSE_LINES,
+    };
+    char receive_buffer[RECEIVE_BUFFER_SIZE];
+    const char *ret;
+    char *p;
+
+    if (!urg->is_active) {
+        return NOT_CONNECTED_MESSAGE;
+    }
+
+    ret = receive_command_response(urg, receive_buffer, RECEIVE_BUFFER_SIZE,
+                                   "VV\n", VV_RESPONSE_LINES);
+    if (ret) {
+        return ret;
+    }
+
+    p = copy_token(urg->return_buffer,
+                   receive_buffer, "VEND:", ";", VV_RESPONSE_LINES);
+    return (p) ? p : RECEIVE_ERROR_MESSAGE;
+}
 
 const char *urg_sensor_firmware_version(urg_t *urg)
 {
@@ -1235,7 +1257,63 @@ const char *urg_sensor_firmware_version(urg_t *urg)
     }
 
     p = copy_token(urg->return_buffer,
-                   receive_buffer, "FIRM:", " (", VV_RESPONSE_LINES);
+                   receive_buffer, "FIRM:", "(", VV_RESPONSE_LINES);
+    return (p) ? p : RECEIVE_ERROR_MESSAGE;
+}
+
+const char *urg_sensor_firmware_date(urg_t *urg)
+{
+    enum {
+        RECEIVE_BUFFER_SIZE = BUFFER_SIZE * VV_RESPONSE_LINES,
+    };
+    char receive_buffer[RECEIVE_BUFFER_SIZE];
+    const char *ret;
+    char *p;
+
+    if (!urg->is_active) {
+        return NOT_CONNECTED_MESSAGE;
+    }
+
+    // Get the firmware version and append a '(', this will be what's before the date
+    char firmware_version[50];
+    strcpy(firmware_version, urg_sensor_firmware_version(urg));
+    strcat(firmware_version, "(");
+
+    ret = receive_command_response(urg, receive_buffer, RECEIVE_BUFFER_SIZE,
+                                   "VV\n", VV_RESPONSE_LINES);
+    if (ret) {
+        return ret;
+    }
+
+    // Strip out the actual date from between the '(' and ')'
+    char *date;
+    p = copy_token(urg->return_buffer,
+               receive_buffer, "FIRM:", ";", VV_RESPONSE_LINES);
+    date = copy_token(urg->return_buffer, p, firmware_version, ")", 1);
+    return (date) ? date : RECEIVE_ERROR_MESSAGE;
+}
+
+const char *urg_sensor_protocol_version(urg_t *urg)
+{
+    enum {
+        RECEIVE_BUFFER_SIZE = BUFFER_SIZE * VV_RESPONSE_LINES,
+    };
+    char receive_buffer[RECEIVE_BUFFER_SIZE];
+    const char *ret;
+    char *p;
+
+    if (!urg->is_active) {
+        return NOT_CONNECTED_MESSAGE;
+    }
+
+    ret = receive_command_response(urg, receive_buffer, RECEIVE_BUFFER_SIZE,
+                                   "VV\n", VV_RESPONSE_LINES);
+    if (ret) {
+        return ret;
+    }
+
+    p = copy_token(urg->return_buffer,
+                   receive_buffer, "PROT:", ";", VV_RESPONSE_LINES);
     return (p) ? p : RECEIVE_ERROR_MESSAGE;
 }
 
