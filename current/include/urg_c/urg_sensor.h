@@ -24,7 +24,7 @@
 extern "C" {
 #endif
 
-#include "urg_connection.h"
+#include "urg_c/urg_connection.h"
 
 
     /*!

@@ -14,7 +14,7 @@
 extern "C" {
 #endif
 
-#include "urg_detect_os.h"
+#include "urg_c/urg_detect_os.h"
 
 #if defined(URG_WINDOWS_OS)
 #include <windows.h>

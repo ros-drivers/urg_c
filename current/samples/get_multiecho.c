@@ -7,8 +7,8 @@
   $Id$
 */
 
-#include "urg_sensor.h"
-#include "urg_utils.h"
+#include "urg_c/urg_sensor.h"
+#include "urg_c/urg_utils.h"
 #include "open_urg_sensor.h"
 #include <stdio.h>
 #include <stdlib.h>

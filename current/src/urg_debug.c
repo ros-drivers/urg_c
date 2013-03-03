@@ -7,7 +7,7 @@
   $Id: urg_utils.c,v da778fd816c2 2011/01/05 20:02:06 Satofumi $
 */
 
-#include "urg_debug.h"
+#include "urg_c/urg_debug.h"
 
 
 int urg_raw_write(urg_t *urg, const char *data, int data_size)

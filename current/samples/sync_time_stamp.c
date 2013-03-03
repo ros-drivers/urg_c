@@ -7,8 +7,8 @@
   $Id: sync_time_stamp.c,v 799c195d046c 2011/01/14 05:10:38 hokuyo $
 */
 
-#include "urg_sensor.h"
-#include "urg_utils.h"
+#include "urg_c/urg_sensor.h"
+#include "urg_c/urg_utils.h"
 #include "open_urg_sensor.h"
 #include <stdio.h>
 #if defined(URG_WINDOWS_OS)

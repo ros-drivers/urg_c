@@ -10,8 +10,8 @@
   \todo C90 相当で動作するように調整する。ただし、"//" コメントは使う
 */
 
-#include "urg_serial_utils.h"
-#include "urg_detect_os.h"
+#include "urg_c/urg_serial_utils.h"
+#include "urg_c/urg_detect_os.h"
 #include <windows.h>
 #include <setupapi.h>
 #include <string.h>

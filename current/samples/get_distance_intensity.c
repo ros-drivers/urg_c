@@ -7,8 +7,8 @@
   $Id: get_distance_intensity.c,v 586c4fa697ef 2011/01/24 08:50:01 Satofumi $
 */
 
-#include "urg_sensor.h"
-#include "urg_utils.h"
+#include "urg_c/urg_sensor.h"
+#include "urg_c/urg_utils.h"
 #include "open_urg_sensor.h"
 #include <stdio.h>
 #include <stdlib.h>

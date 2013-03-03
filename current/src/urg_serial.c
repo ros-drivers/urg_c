@@ -7,7 +7,7 @@
   $Id: urg_serial.c,v 0caa22c18f6b 2010/12/30 03:36:32 Satofumi $
 */
 
-#include "urg_serial.h"
+#include "urg_c/urg_serial.h"
 
 
 enum {

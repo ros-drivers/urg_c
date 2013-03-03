@@ -6,8 +6,8 @@
   $Id: urg_utils.c,v da778fd816c2 2011/01/05 20:02:06 Satofumi $
 */
 
-#include "urg_utils.h"
-#include "urg_errno.h"
+#include "urg_c/urg_utils.h"
+#include "urg_c/urg_errno.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
 

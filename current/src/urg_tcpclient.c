@@ -9,7 +9,7 @@
 
 // http://www.ne.jp/asahi/hishidama/home/tech/lang/socket.html
 
-#include "urg_detect_os.h"
+#include "urg_c/urg_detect_os.h"
 #include <string.h>
 #if defined(URG_WINDOWS_OS)
 #else
@@ -17,7 +17,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #endif
-#include "urg_tcpclient.h"
+#include "urg_c/urg_tcpclient.h"
 
 #include <stdio.h>
 

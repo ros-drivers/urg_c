@@ -7,7 +7,7 @@
   $Id$
 */
 
-#include "urg_ring_buffer.h"
+#include "urg_c/urg_ring_buffer.h"
 
 
 void ring_initialize(ring_buffer_t *ring, char *buffer, const int shift_length)

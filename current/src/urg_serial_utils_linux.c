@@ -7,7 +7,7 @@
   $Id: urg_serial_utils_linux.c,v 0caa22c18f6b 2010/12/30 03:36:32 Satofumi $
 */
 
-#include "urg_serial_utils.h"
+#include "urg_c/urg_serial_utils.h"
 #include <dirent.h>
 #include <sys/stat.h>
 #include <string.h>

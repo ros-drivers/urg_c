@@ -6,9 +6,9 @@
   $Id$
 */
 
-#include "urg_sensor.h"
-#include "urg_utils.h"
-#include "urg_debug.h"
+#include "urg_c/urg_sensor.h"
+#include "urg_c/urg_utils.h"
+#include "urg_c/urg_debug.h"
 #include "open_urg_sensor.h"
 #include <stdio.h>
 

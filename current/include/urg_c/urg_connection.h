@@ -14,8 +14,8 @@
 extern "C" {
 #endif
 
-#include "urg_serial.h"
-#include "urg_tcpclient.h"
+#include "urg_c/urg_serial.h"
+#include "urg_c/urg_tcpclient.h"
 
 
 /*!

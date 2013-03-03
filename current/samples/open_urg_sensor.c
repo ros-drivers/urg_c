@@ -9,8 +9,8 @@
 */
 
 #include "open_urg_sensor.h"
-#include "urg_utils.h"
-#include "urg_detect_os.h"
+#include "urg_c/urg_utils.h"
+#include "urg_c/urg_detect_os.h"
 #include <string.h>
 #include <stdio.h>
 

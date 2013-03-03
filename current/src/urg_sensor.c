@@ -8,8 +8,8 @@
   \todo Mx 計測中に他の Mx コマンドを送信したときに、適切に動作するようにする
 */
 
-#include "urg_sensor.h"
-#include "urg_errno.h"
+#include "urg_c/urg_sensor.h"
+#include "urg_c/urg_errno.h"
 #include <stddef.h>
 #include <string.h>
 #include <stdio.h>

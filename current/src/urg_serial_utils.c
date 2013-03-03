@@ -7,8 +7,8 @@
   $Id$
 */
 
-#include "urg_serial_utils.h"
-#include "urg_detect_os.h"
+#include "urg_c/urg_serial_utils.h"
+#include "urg_c/urg_detect_os.h"
 
 
 #if defined(URG_WINDOWS_OS)

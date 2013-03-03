@@ -14,8 +14,8 @@
 extern "C" {
 #endif
 
-#include "urg_ring_buffer.h"
-#include "urg_detect_os.h"
+#include "urg_c/urg_ring_buffer.h"
+#include "urg_c/urg_detect_os.h"
 #include <sys/types.h>
 #if defined(URG_WINDOWS_OS)
 #include <windows.h>

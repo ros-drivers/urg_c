@@ -19,7 +19,7 @@
 extern "C" {
 #endif
 
-#include "urg_sensor.h"
+#include "urg_c/urg_sensor.h"
 
 
     /*!
