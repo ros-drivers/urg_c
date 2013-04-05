@@ -20,6 +20,7 @@ extern "C" {
 #include <windows.h>
 #else
 #include <termios.h>
+#include <sys/select.h>
 #endif
 #include "urg_ring_buffer.h"
 
