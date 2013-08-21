@@ -4,7 +4,7 @@
   <version>1.0.402</version><!-- Format is urg three digit dot, followed by ROS two digit update.  Example 1.0.4 becomes 1.0.400 -->
   <description>The urg_c package</description>
 
-  <maintainer email="chadrockey@willowgarage.com">Chad Rockey</maintainer>
+  <maintainer email="chadrockey@gmail.com">Chad Rockey</maintainer>
 
   <license>BSD</license>
 
