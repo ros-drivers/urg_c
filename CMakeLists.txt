@@ -42,7 +42,9 @@ add_library(liburg_c ${LIBRARY_SRC_DIR}/urg_sensor.c
 	                 ${LIBRARY_SRC_DIR}/urg_time.c
 
 )
-target_link_libraries(liburg_c -lrt)
+if(NOT ANDROID)
+	target_link_libraries(liburg_c -lrt)
+endif(NOT ANDROID)
 
 add_library(open_urg_sensor ${LIBRARY_SAMPLE_DIR}/open_urg_sensor.c)
 target_link_libraries(open_urg_sensor -lm liburg_c ${catkin_LIBRARIES})
@@ -89,6 +91,7 @@ target_link_libraries(timeout_test liburg_c open_urg_sensor ${catkin_LIBRARIES})
 install(TARGETS liburg_c open_urg_sensor angle_convert_test calculate_xy find_port
                 get_distance get_distance_intensity get_multiecho get_multiecho_intensity
 	            reboot_test sensor_parameter sync_time_stamp timeout_test
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

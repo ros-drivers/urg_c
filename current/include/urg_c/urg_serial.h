@@ -18,6 +18,9 @@ extern "C" {
 
 #if defined(URG_WINDOWS_OS)
 #include <windows.h>
+#elif defined(ANDROID)
+#include <termios.h>
+#define tcdrain(fd) ioctl(fd, TCSBRK, 1) 
 #else
 #include <termios.h>
 #include <sys/select.h>
