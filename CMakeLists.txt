@@ -43,7 +43,7 @@ add_library(liburg_c ${LIBRARY_SRC_DIR}/urg_sensor.c
 
 )
 if(NOT ANDROID)
-	target_link_libraries(liburg_c -lrt)
+	target_link_libraries(liburg_c -lrt -lm)
 endif(NOT ANDROID)
 
 add_library(open_urg_sensor ${LIBRARY_SAMPLE_DIR}/open_urg_sensor.c)
