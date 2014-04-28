@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>urg_c</name>
-  <version>1.0.403</version><!-- Format is urg three digit dot, followed by ROS two digit update.  Example 1.0.4 becomes 1.0.400 -->
+  <version>1.0.404</version><!-- Format is urg three digit dot, followed by ROS two digit update.  Example 1.0.4 becomes 1.0.400 -->
   <description>The urg_c package</description>
 
   <maintainer email="chadrockey@gmail.com">Chad Rockey</maintainer>

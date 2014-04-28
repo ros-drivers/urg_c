@@ -2,8 +2,8 @@
 Changelog for package urg_c
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.404 (2014-04-28)
+--------------------
 * Merge pull request `#2 <https://github.com/ros-drivers/urg_c/issues/2>`_ from dawonn/master
   Issue `#1 <https://github.com/ros-drivers/urg_c/issues/1>`_ - missing libmath link
 * Ubuntu 14.04 Fix - missing libmath link
