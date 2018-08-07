@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
 
     urg_start_measurement(&urg, URG_DISTANCE, CAPTURE_TIMES, 0);
     for (i = 0; i < CAPTURE_TIMES; ++i) {
-        n = urg_get_distance(&urg, data, &time_stamp, system_time_stamp);
+        n = urg_get_distance(&urg, data, &time_stamp, &system_time_stamp);
         if (n <= 0) {
             printf("urg_get_distance: %s\n", urg_error(&urg));
             free(data);

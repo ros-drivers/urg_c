@@ -168,6 +168,7 @@ static void ignore_receive_data_with_qt(urg_t *urg, int timeout)
     }
 
     connection_write(&urg->connection, "QT\n", 3);
+    urg->is_sending = URG_TRUE;
     urg->is_laser_on = URG_FALSE;
     ignore_receive_data(urg, timeout);
 }

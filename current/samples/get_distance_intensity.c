@@ -12,6 +12,7 @@
 #include "open_urg_sensor.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 static void print_data(urg_t *urg, long data[], unsigned short intensity[],
@@ -57,6 +58,13 @@ int main(int argc, char *argv[])
     if (open_urg_sensor(&urg, argc, argv) < 0) {
         return 1;
     }
+
+	// Distance Intensity reading only (?) on UXM-30LX
+	if (!strstr(urg_sensor_product_type(&urg),"UXM-30LX")) {
+		fprintf(stderr,"Distance Intensity not supported on %s\n",
+				urg_sensor_product_type(&urg));
+		return 1;
+	}
 
     max_data_size = urg_max_data_size(&urg);
     data = (long *)malloc(max_data_size * sizeof(data[0]));
