@@ -2,8 +2,8 @@
 Changelog for package urg_c
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.405 (2018-08-07)
+--------------------
 * pass *pointer to* system timestamp, sync issue on quit
 * Adding new maintainer.
 * Contributors: Tony Baltovski, knickels
