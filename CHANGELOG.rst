@@ -2,8 +2,8 @@
 Changelog for package urg_c
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.4000 (2020-03-17)
+---------------------
 * migrate ros2 devel (`#11 <https://github.com/ros-drivers/urg_c/issues/11>`_)
 * Contributors: Karsten Knese, Brett, Marc-Antoine Testier, Chris Lalancette
 
