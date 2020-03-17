@@ -2,6 +2,11 @@
 Changelog for package urg_c
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* migrate ros2 devel (`#11 <https://github.com/ros-drivers/urg_c/issues/11>`_)
+* Contributors: Karsten Knese, Brett, Marc-Antoine Testier, Chris Lalancette
+
 1.0.405 (2018-08-07)
 --------------------
 * pass *pointer to* system timestamp, sync issue on quit
