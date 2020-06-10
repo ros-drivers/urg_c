@@ -2,8 +2,8 @@
 Changelog for package urg_c
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.4001 (2020-06-10)
+---------------------
 * add maintainer for ros2 (`#13 <https://github.com/ros-drivers/urg_c/issues/13>`_)
 * Contributors: Michael Ferguson
 
